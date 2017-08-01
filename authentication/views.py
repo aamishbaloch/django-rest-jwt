@@ -35,7 +35,6 @@ class LoginView(APIView):
         POST /api/auth/login/
     """
 
-    @transaction.atomic()
     def post(self, request):
         username = request.data.get('username', None)
         password = request.data.get('password', None)
