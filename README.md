@@ -15,11 +15,11 @@ Installation
 Following are the steps to install this platform.
 
 - Get in the root directory of the project
-- Create Virtual Enviornment
+- Create Virtual Environment
 ```sh
 $ cd ..
 $ virtualenv -p python3 django_rest_jwt_venv
-$ cd doctish
+$ cd django_rest_jwt
 $ source ../django_rest_jwt_venv/bin/activate
 ```
 - Install Requirements
