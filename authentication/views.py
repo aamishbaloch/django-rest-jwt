@@ -39,10 +39,8 @@ class LoginView(APIView):
         username = request.data.get('username', None)
         password = request.data.get('password', None)
 
-        try:
-            user = User.objects.get(username=username)
-            authenticated_user = authenticate(username=user.username, password=password)
+        authenticated_user = authenticate(username=username, password=password)
+        if authenticated_user:
             serializer = UserLoginSerializer(authenticated_user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        except ObjectDoesNotExist as e:
-            return Response(str(e), status=status.HTTP_404_NOT_FOUND)
+        return Response("Invalid Credentials", status=status.HTTP_404_NOT_FOUND)
