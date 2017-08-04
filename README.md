@@ -46,3 +46,17 @@ $ sudo vim local_settings.py
 $ cd .. 
 $ python manage.py migrate 
 ```
+
+Testing
+-------
+I have added the unit tests as well. Through following commands you can run all the tests.
+
+```sh
+python manage.py test  
+```
+To run any specific test if you want to:
+```sh
+python manage.py test authentication.tests.UserLoginAPITests.test_login_user 
+```
+
+Don't forget to give Star to the repo. Happy Coding!

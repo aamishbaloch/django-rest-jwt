@@ -11,3 +11,4 @@ feedback.csv
 errors_log.out
 logfile
 .DS*
+django_rest_jwt/local_settings.py
