@@ -22,7 +22,7 @@ class UserLoginSerializer(UserSerializer):
     token = serializers.SerializerMethodField()
 
     class Meta(UserSerializer.Meta):
-        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'token')
+        fields = UserSerializer.Meta.fields + ('token',)
 
     def get_token(self, user):
         user = JWTHelper.encode_token(user)

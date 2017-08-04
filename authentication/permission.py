@@ -5,4 +5,4 @@ class UserAccessPermission(permissions.BasePermission):
     message = 'No permission for accessing this view.'
 
     def has_permission(self, request, view):
-        return not request.user.is_active
+        return request.user.is_active

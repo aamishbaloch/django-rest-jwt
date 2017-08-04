@@ -1,6 +1,4 @@
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -43,4 +41,4 @@ class LoginView(APIView):
         if authenticated_user:
             serializer = UserLoginSerializer(authenticated_user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response("Invalid Credentials", status=status.HTTP_404_NOT_FOUND)
+        return Response("Invalid Credentials", status=status.HTTP_401_UNAUTHORIZED)
